@@ -37,13 +37,6 @@
         },
         {
             "src": "/(.*)",
-            "headers": {
-                "Cache-Control": "public, max-age=0, must-revalidate",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Allow-Credentials": "true",
-                "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
-                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-            },
             "dest": "/api/index.php"
         }
     ]
