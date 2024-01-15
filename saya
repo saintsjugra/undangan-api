@@ -15,7 +15,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  * Bentar, fungsi console ini perlu app kernel sebagai penghubung aplikasi.
  * Setelah itu, hanya perlu menjalankannya saja.
  *
- * Ini sangat simple.
+ * Ini sangat simple.sadsasda
  */
 
 exit(\Core\Kernel\Kernel::cli(
