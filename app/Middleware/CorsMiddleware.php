@@ -17,6 +17,8 @@ final class CorsMiddleware implements MiddlewareInterface
 
         $header = respond()->getHeader();
         $header->set('Access-Control-Allow-Origin', '*');
+        $header->set('Access-Control-Allow-Credentials', 'true');
+        $header->set('Access-Control-Max-Age', '86400');
 
         if ($header->has('Vary')) {
             $vary = explode(', ', $header->get('Vary'));
