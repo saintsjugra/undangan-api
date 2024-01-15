@@ -6,23 +6,6 @@
             "maxDuration": 10
         }
     },
-    "headers": [
-        {
-            "source": "/api/(.*)",
-            "headers": [
-                { "key": "Access-Control-Allow-Origin", "value": "*" },
-                {
-                    "key": "Access-Control-Allow-Methods",
-                    "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-                },
-                {
-                    "key": "Access-Control-Allow-Headers",
-                    "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-                },
-                { "key": "Access-Control-Allow-Credentials", "value": "true" }
-            ]
-        }
-    ],
     "routes": [
         {
             "src": "/favicon.ico",
@@ -48,12 +31,21 @@
         {
             "src": "/(css|js)/(.*)",
             "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
                 "Cache-Control": "public, max-age=86400, immutable"
             },
             "dest": "/public/$1/$2"
         },
         {
             "src": "/(.*)",
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
+                "Cache-Control": "public, max-age=0, must-revalidate"
+            },
             "dest": "/api/index.php"
         }
     ]
